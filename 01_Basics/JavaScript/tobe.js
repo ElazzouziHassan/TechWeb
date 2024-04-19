@@ -10,19 +10,13 @@
 var expect = function(val) {
   return {
     toBe: function(comparedVal) {
-      if (val !== comparedVal) {
-        throw new Error("Not Equal");
-      }
-      return true;
+      if (val !== comparedVal) { throw new Error("Not Equal") } return true;
     },
     notToBe: function(comparedVal) {
-      if (val === comparedVal) {
-        throw new Error("Equal");
-      }
-      return true;
+      if (val === comparedVal) { throw new Error("Equal") } return true;
     }
   };
-};
+}
 
 try {
   console.log(expect(5).toBe(5)); // true
